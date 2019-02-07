@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div id="app">
+    <div class="page-container">
+      <md-app md-waterfall md-mode="fixed">
+        <md-app-toolbar class="md-primary">
+          <span class="md-title">{{ title }}</span>
+        </md-app-toolbar>
+
+        <md-app-content>
+          <div>
+            <md-button @click.native="startStandardLoadTest" class="md-raised md-primary" :disabled="testUnderway">Standard
+              Queries</md-button>
+            <md-button @click.native="startPartitionedLoadTest" class="md-raised md-accent" :disabled="testUnderway">Partitioned
+              Queries</md-button>
+          </div>
+
+          <md-content>
+            <ul>
+              <li>Queries - {{queries}}</li>
+              <li>Queries per second - {{qps}}</li>
+              <li>Errors - {{errors}}</li>
+            </ul>
+          </md-content>
+
+          <md-card>
+            <md-card-media>
+              <img src="think.png" alt="Cover">
+            </md-card-media>
+          </md-card>
+        </md-app-content>
+      </md-app>
+    </div>
+    <!-- Your code here -->
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-material@beta"></script>
+  <script src="https://cdn.jsdelivr.net/npm/async@2.6.1/dist/async.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
